@@ -3,25 +3,28 @@
     font-family: Arial,sans-serif;
     box-sizing: border-box;
 }
+
+/* navbar section */
 .navbar{
     height: 60px;
     background-color:#0f1111;
     color: white;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content:space-between;
     padding: 0 10px;
 }
 
 .nav-logo{
-    height:50px;
-    width:100px;
+    height:60px;
+    width:105px;
 }
 .logo{
     background-image: url("logo.jpg");
-    background-size: contain;
+    background-size: cover;
     height:50px;
-    width: 100px;  
+    width: 102px;  
 }
 
 .border{
@@ -32,7 +35,7 @@
     border: 1.5px solid white;
 }
 
-/* box2 */
+
 .add-first{
     color: #cccccc;
     font-size: 0.85rem;
@@ -50,24 +53,23 @@
     align-items: center;
 }
 
-/* box3 */
+
 .nav-search{
     display: flex;
     justify-content: space-between;
     background-color: pink;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
+    flex-grow: 1;
     height: 40px;
     border-radius: 4px;
-    padding: 0 10px;
-    align-items: center; 
 }
 
 .search-select{
     background-color: #f3f3f3;
     width: 60px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 5px;
     border: none;
 }   
 
@@ -84,7 +86,7 @@
     font-size: 1.2rem;
     color: #0f1111 ;
     background-color: #febd68;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 8px;
 }
 
@@ -92,7 +94,6 @@
     border: 2px solid orange;
 }
 
-/* box4*/
 
 span{
     font-size: 0.7rem;
@@ -103,7 +104,6 @@ span{
     font-weight: 700;
 }
 
-/* box6 */
 .nav-cart i{
     font-size:30px
 }
@@ -113,7 +113,7 @@ span{
     font-weight: 700;
 }
 
-/* panel */
+/* panel-section*/
 .panel{
     height: 40px;
     background-color: #222f3d;
@@ -171,7 +171,7 @@ span{
 /* shop-section */
 .shop-section{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
     background-color: rgba(238, 228, 182, 0.979);
@@ -196,7 +196,6 @@ span{
     background-color: white;
     background-repeat: no-repeat;
     background-position: center;
-    /* margin-top:1rem; */
     margin-bottom:1rem;
     border-radius: 8px;
 }
@@ -267,12 +266,6 @@ ul p{
     align-items: center;
 }
 
-.logo{
-    background-image: url("logo.jpg");
-    background-size: cover;
-    height: 50px;
-    width: 100px;
-}
 
 .foot-panel4{
     background-color:#0f1111;
@@ -293,18 +286,25 @@ ul p{
 }
 
 @media (max-width: 768px) {
-    .navbar, .panel, .shop-section, footer{
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel {
         flex-direction: column;
         text-align: center;
     }
 
-    .shop-section{
+    .shop-section {
         grid-template-columns: 1fr;
         gap: 10px;
     }
 
-    .nav-search{
-        flex-direction: column;
+    .nav-search {
+        flex-direction: row;
         width: 100%;
+        max-width: none;
+        margin-top: 10px;
     }
 }
